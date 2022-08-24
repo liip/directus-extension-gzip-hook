@@ -1,6 +1,6 @@
 {
 	"name": "directus-extension-directus-extension-gzip-hook",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"keywords": [
 		"directus",
 		"directus-extension",
@@ -10,19 +10,35 @@
 		"type": "hook",
 		"path": "dist/index.js",
 		"source": "src/index.ts",
-		"host": "^9.16.1"
+		"host": "^9.15.1"
 	},
 	"scripts": {
 		"build": "directus-extension build",
-		"dev": "directus-extension build -w --no-minify"
+		"dev": "directus-extension build -w --no-minify",
+		"lint": "eslint --ext .js,.ts,.vue src/",
+		"format": "eslint --ext .js,.ts,.vue --fix src/"
 	},
 	"devDependencies": {
-		"@directus/extensions-sdk": "9.16.1",
+		"@directus/extensions-sdk": "^9.15.1",
 		"@types/compression": "^1.7.2",
 		"@types/node": "^18.7.9",
+		"directus-codestyle": "github:dimitrov-adrian/directus-codestyle",
 		"typescript": "^4.7.4"
 	},
 	"dependencies": {
 		"compression": "^1.7.4"
+	},
+	"prettier": "directus-codestyle/prettier",
+	"stylelint": {
+	  "extends": "directus-codestyle/stylelint"
+	},
+	"eslintConfig": {
+	  "extends": "./node_modules/directus-codestyle/.eslintrc.js",
+	  "parserOptions": {
+		"sourceType": "module"
+	  },
+	  "rules": {
+		"vue/multi-word-component-names": 0
+	  }
 	}
 }
