@@ -1,0 +1,28 @@
+{
+	"name": "directus-extension-directus-extension-gzip-hook",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-custom-hook"
+	],
+	"directus:extension": {
+		"type": "hook",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^9.16.1"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "9.16.1",
+		"@types/compression": "^1.7.2",
+		"@types/node": "^18.7.9",
+		"typescript": "^4.7.4"
+	},
+	"dependencies": {
+		"compression": "^1.7.4"
+	}
+}
